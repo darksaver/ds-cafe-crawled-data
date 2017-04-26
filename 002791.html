@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>[뻘짓일기] 현재까지 정해진 변수</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+<h1>[뻘짓일기] 현재까지 정해진 변수</h1>
+<p>다크세이버 개발실</p>
+<p>작성자: <b>알피란(arpiran)</b><br />
+작성일: <b>2016-02-21 07:19:00</b></p>
+<p>
+
+		 
+		 
+	     
+	
+		
+		
+		
+			
+			<p>
+				
+					
+					
+					
+					<p>성과라기보다는 작업시 변수 정리한 내용을 복사 붙여넣기했습니다.</p><p><br /></p><p>//--------------------보이는것 관련</p><p><br /></p><p>//1칸 크기//</p><p>Cell</p><p>(기본값 48)</p><p><br /></p><p>//캐릭터 좌표</p><p>char_X,char_Y </p><p><br /></p><p>//캐릭터명 좌표</p><p>char_name_X,char_name_Y</p><p>(timage에 글자 뿌리는거 구현안됨)</p><p><br /></p><p>//캐릭터 발구르기</p><p>char_motion</p><p>(기본 틱값 50)</p><p><br /></p><p>//맵위치</p><p>map_X,map_Y</p><p>(맵 크기가 클때 캐릭터는 중앙, 맵이 움직이는것 구현안됨)</p><p><br /></p><p>//맵크기</p><p>map_size_X,map_size_Y</p><p><br /></p><p>//장애물 좌표</p><p>map_object_X,object_Y</p><p><br /></p><p>//장비창 좌표</p><p>window_inven_X,inven_Y</p><p><br /></p><p>//장비창 제목 좌표</p><p>window_inven_title_X,window_inven_title_Y</p><p><br /></p><p>//장비창 닫기 좌표</p><p>window_inven_button_close_X,window_inven_button_close_Y</p><p><br /></p><p>//장비창 아이템 좌표</p><p>window_inven_item_X,inven_item_Y</p><p><br /></p><p>//마우스 좌표</p><p>Mouse_X,Mouse_Y</p><p><br /></p><p>//--------------------활성화 여부</p><p><br /></p><p>//최상위 여부</p><p>window_top</p><p><br /></p><p>//인벤토리 열림 닫힘 여부</p><p>window_inven_state</p><p><br /></p><p>//캐릭터 이동중 여부</p><p>char_move_state</p><p><br /></p><p><br /></p><p><br /></p><p>한곳에 그려넣는 방식을 하다보니 새로운 문제점이 생겼습니다.</p><p>활성화 여부와 최상위 변수가 계속 생깁니다.</p><p><br /></p><p>모든 경우의수를 처리해야하는건 이전방식이랑 별반 다를게 없어집니다.</p><p><br /></p><p>장비창과 캐릭터정보창이 동시에 켜져있는경우 이걸 구분하는 코드를 만들어야하는데</p><p>3개이상 중첩시 버그가 생기네요.</p><p>일단은 해결해볼려고 노력중이긴 하는데 기존 방법으로는 창 2개이상은 구현하기 힘들어 보입니다...</p><p>(쉽게 말씀드리면 다쿤던전 갈때 상점창, 수리창, 창고창 동시에 켜서 못간다고 생각하시면 됩니다.)</p><p><br /></p><p>변수를 최소한을 쓰면서 구분이 가능한 방법을 찾고 적용해보고 있습니다</p><p>기존 A,B,C 세게 가 있을때 모조리 다 적어줘야했다면 아래 방식을 따르면</p><p>변수하나로 해결가능해 보입니다.</p><p><br /></p><p>레퍼런스<br /></p><p><img src="./images/002791_830044.jpg" /><img src="./images/002791_195205.jpg" /><img src="./images/002791_798786.jpg" />aa</p>
+<p><b>댓글 22</b><hr /><p><b>the치즈(anger1019)</b> 2016-02-21 09:52:00<br />
+
+                                
+                                <div class="u_cbox_text_wrap">
+                                    
+                                    
+                                    <span class="u_cbox_contents">우와~~! 어렵당.. <br />고생이 많으십니다.<br />항상 응원하고 있습니다.<br />화이팅</span>
+                                    
+                                </div>
+                                
+                                
+                                
+
+                                
+                                </p><p><b>연약한(bae1404)</b> 2016-02-21 10:52:00<br />
+
+                                
+                                <div class="u_cbox_text_wrap">
+                                    
+                                    
+                                    <span class="u_cbox_contents">외계어아니죠? ㅎㅎ 힘내세요 ㅋㅋ</span>
+                                    
+                                </div>
+                                
+                                
+                                
+
+                                
+                                </p><p><b>경남전설(bsk7640)</b> 2016-02-21 12:50:00<br />
+
+                                
+                                <div class="u_cbox_text_wrap">
+                                    
+                                    
+                                    <span class="u_cbox_contents">우와 .... 이건 사람의 언어가....;; 아닌것 같아요 ㅜ</span>
+                                    
+                                </div>
+                                
+                                
+                                
+
+                                
+                                </p><p><b>한겨울(dhsnlal)</b> 2016-02-21 14:07:00<br />
+
+                                
+                                <div class="u_cbox_text_wrap">
+                                    
+                                    
+                                </div>
+                                
+                                <div class="u_cbox_sticker_section">
+                                    <div class="u_cbox_sticker_wrap">
+                                    
+                                        
+                                        
+                                            <a href="http://m.gfmarket.naver.com/sticker/detail/code/line_characters_in_love" target="_blank" onclick="nclk(this,'cmt.insticker','','');"><img style="height: auto; max-width: 182px; max-height: 182px;" src="./images/002791_004_original_15.png" /></a>
+                                        
+                                    
+                                    </div>
+                                </div>
+                                
+                                
+                                
+
+                                
+                                </p><p><b>옆집행님(chunhwa1989)</b> 2016-02-21 14:33:00<br />
+
+                                
+                                <div class="u_cbox_text_wrap">
+                                    
+                                    
+                                </div>
+                                
+                                <div class="u_cbox_sticker_section">
+                                    <div class="u_cbox_sticker_wrap">
+                                    
+                                        
+                                        
+                                            <a href="http://m.gfmarket.naver.com/sticker/detail/code/moon_and_james" target="_blank" onclick="nclk(this,'cmt.insticker','','');"><img style="height: auto; max-width: 182px; max-height: 182px;" src="./images/002791_005_original_1.png" /></a>
+                                        
+                                    
+                                    </div>
+                                </div>
+                                
+                                
+                                
+
+                                
+                                </p><p><b>쿠르릉크(stou2)</b> 2016-02-21 19:48:00<br />
+
+                                
+                                <div class="u_cbox_text_wrap">
+                                    
+                                    
+                                    <span class="u_cbox_contents">항상 응원합니다!! 힘내세요 ㅎ</span>
+                                    
+                                </div>
+                                
+                                
+                                
+
+                                
+                                </p><p><b>바하4(yg99170)</b> 2016-02-21 21:00:00<br />
+
+                                
+                                <div class="u_cbox_text_wrap">
+                                    
+                                    
+                                </div>
+                                
+                                <div class="u_cbox_sticker_section">
+                                    <div class="u_cbox_sticker_wrap">
+                                    
+                                        
+                                        
+                                            <a href="http://m.gfmarket.naver.com/sticker/detail/code/moon_and_james" target="_blank" onclick="nclk(this,'cmt.insticker','','');"><img style="height: auto; max-width: 182px; max-height: 182px;" src="./images/002791_007_original_2.png" /></a>
+                                        
+                                    
+                                    </div>
+                                </div>
+                                
+                                
+                                
+
+                                
+                                </p><p><b>다크37(jdsfz)</b> 2016-02-21 22:54:00<br />
+
+                                
+                                <div class="u_cbox_text_wrap">
+                                    
+                                    
+                                    <span class="u_cbox_contents">화이팅입니다!!</span>
+                                    
+                                </div>
+                                
+                                
+                                
+
+                                
+                                </p><p><b>주인님(kjc6120)</b> 2016-02-22 08:50:00<br />
+
+                                
+                                <div class="u_cbox_text_wrap">
+                                    
+                                    
+                                </div>
+                                
+                                <div class="u_cbox_sticker_section">
+                                    <div class="u_cbox_sticker_wrap">
+                                    
+                                        
+                                        
+                                            <a href="http://m.gfmarket.naver.com/sticker/detail/code/moon_special" target="_blank" onclick="nclk(this,'cmt.insticker','','');"><img style="height: auto; max-width: 182px; max-height: 182px;" src="./images/002791_009_original_2.png" /></a>
+                                        
+                                    
+                                    </div>
+                                </div>
+                                
+                                
+                                
+
+                                
+                                </p><p><b>초꼬러(sevkl)</b> 2016-02-23 02:28:00<br />
+
+                                
+                                <div class="u_cbox_text_wrap">
+                                    
+                                    
+                                    <span class="u_cbox_contents">좋으디 좋으디</span>
+                                    
+                                </div>
+                                
+                                
+                                
+
+                                
+                                </p><p><b>한쓰(xhtnsdkqk)</b> 2016-02-23 19:09:00<br />
+
+                                
+                                <div class="u_cbox_text_wrap">
+                                    
+                                    
+                                    <span class="u_cbox_contents">부담갖지 마시고 힘내세요 !!</span>
+                                    
+                                </div>
+                                
+                                
+                                
+
+                                
+                                </p><p><b>Beck(jiuk100)</b> 2016-02-23 23:29:00<br />
+
+                                
+                                <div class="u_cbox_text_wrap">
+                                    
+                                    
+                                    <span class="u_cbox_contents">Destiny Warriors RPG맵 참고하셔도 될꺼같아요 이거 맵 닥세풍이 나네요 완전히<br />스팀에서 250원에 파네요 전투방식은 달라요</span>
+                                    
+                                </div>
+                                
+                                
+                                
+
+                                
+                                </p><p><b>땡구(gudrm99)</b> 2016-02-27 11:04:00<br />
+
+                                
+                                <div class="u_cbox_text_wrap">
+                                    
+                                    
+                                    <span class="u_cbox_contents">와...진짜 대다나다...</span>
+                                    
+                                </div>
+                                
+                                
+                                
+
+                                
+                                </p><p><b>닥세월드빠돌이(zmsthf1)</b> 2016-02-27 23:42:00<br />
+
+                                
+                                <div class="u_cbox_text_wrap">
+                                    
+                                    
+                                    <span class="u_cbox_contents">대단해요~~</span>
+                                    
+                                </div>
+                                
+                                
+                                
+
+                                
+                                </p><p><b>kyoung1901(kyoung1901)</b> 2016-02-28 14:55:00<br />
+
+                                
+                                <div class="u_cbox_text_wrap">
+                                    
+                                    
+                                    <span class="u_cbox_contents">멋집니다!!</span>
+                                    
+                                </div>
+                                
+                                
+                                
+
+                                
+                                </p><p><b>유기(adgjl93)</b> 2016-02-28 20:12:00<br />
+
+                                
+                                <div class="u_cbox_text_wrap">
+                                    
+                                    
+                                    <span class="u_cbox_contents">힘내십쇼!!<br />오랜만에 닥세 생각나서 접속했습니다!!</span>
+                                    
+                                </div>
+                                
+                                
+                                
+
+                                
+                                </p><p><b>하얀늑대v(xchunx)</b> 2016-03-10 12:06:00<br />
+
+                                
+                                <div class="u_cbox_text_wrap">
+                                    
+                                    
+                                    <span class="u_cbox_contents">대단하십니다!! 굿굿 응원하고 있어요 ㅋ</span>
+                                    
+                                </div>
+                                
+                                
+                                
+
+                                
+                                </p><p><b>낙타(younggu58)</b> 2016-03-26 23:18:00<br />
+
+                                
+                                <div class="u_cbox_text_wrap">
+                                    
+                                    
+                                </div>
+                                
+                                <div class="u_cbox_sticker_section">
+                                    <div class="u_cbox_sticker_wrap">
+                                    
+                                        
+                                        
+                                            <a href="http://m.gfmarket.naver.com/sticker/detail/code/line_characters_in_love" target="_blank" onclick="nclk(this,'cmt.insticker','','');"><img style="height: auto; max-width: 182px; max-height: 182px;" src="./images/002791_018_original_3.png" /></a>
+                                        
+                                    
+                                    </div>
+                                </div>
+                                
+                                
+                                
+
+                                
+                                </p><p><b>choskshot(choskshot)</b> 2016-04-01 17:18:00<br />
+
+                                
+                                <div class="u_cbox_text_wrap">
+                                    
+                                    
+                                </div>
+                                
+                                <div class="u_cbox_sticker_section">
+                                    <div class="u_cbox_sticker_wrap">
+                                    
+                                        
+                                        
+                                            <a href="http://m.gfmarket.naver.com/sticker/detail/code/line_characters_in_love" target="_blank" onclick="nclk(this,'cmt.insticker','','');"><img style="height: auto; max-width: 182px; max-height: 182px;" src="./images/002791_019_original_8.png" /></a>
+                                        
+                                    
+                                    </div>
+                                </div>
+                                
+                                
+                                
+
+                                
+                                </p><p><b>에트나화산동굴(gkfp3456)</b> 2016-04-12 17:32:00<br />
+
+                                
+                                <div class="u_cbox_text_wrap">
+                                    
+                                    
+                                    <span class="u_cbox_contents">도대체 게임은 어떻게 만드는걸까 .....세삼 프로그래머들의 기술과능력에 감탄을....ㅠ</span>
+                                    
+                                </div>
+                                
+                                
+                                
+
+                                
+                                </p><p><b>얌생한규니(ksan13)</b> 2016-05-25 19:44:00<br />
+
+                                
+                                <div class="u_cbox_text_wrap">
+                                    
+                                    
+                                    <span class="u_cbox_contents">와... 정말 감사합니다</span>
+                                    
+                                </div>
+                                
+                                
+                                
+
+                                
+                                </p><p><b>그리운닥세(minchul_rain)</b> 2017-02-17 03:06:00<br />
+
+                                
+                                <div class="u_cbox_text_wrap">
+                                    
+                                    
+                                    <span class="u_cbox_contents">대단하십니다! 화이팅</span>
+                                    
+                                </div>
+                                
+                                
+                                
+
+                                
+                                </p></p>
+</body>
+</html>

@@ -1,0 +1,27 @@
+﻿@charset "utf-8";
+/* 본문 영역 */
+body {
+font-family:Arial;
+font-size:10pt;
+background:#FFFCEA;
+}
+
+/* 제목 스타일 */
+h1 {
+font-size:13pt;
+font-family:Arial;
+}
+
+/* 테이블 지정 */
+table {
+font-family:Arial;
+font-size:10pt;
+background:#FFFCEA;
+}
+
+/* 링크 영역 */
+a{ text-decoration:none;}
+a:link { color:#f60;}
+a:visited {	color :#f60;}
+a:hover {	text-decoration:underline; color:#f60;}
+a:active { color:#f60;}

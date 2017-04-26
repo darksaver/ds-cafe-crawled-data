@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>개발중에 발견한 활2개끼는 버그 이유</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+<h1>개발중에 발견한 활2개끼는 버그 이유</h1>
+<p>개발자 게시판</p>
+<p>작성자: <b>WinterSSI(winterssi)</b><br />
+작성일: <b>2015-05-01 11:28:00</b></p>
+<p>
+
+		 
+		 
+	     
+	
+		
+		
+		
+			
+			<p>
+				
+					
+					
+					
+					<p>BOOL __thiscall CGame::ChangeEquip(int this, int a2, LONG a3, LONG a4, int a5, int a6, int a7, LONG a8, LONG a9, int a10, int a11, int a12, int a13, int a14, BOOL a15, int a16, int a17, int a18, int a19, int a20, int a21, int a22, int a23, int a24, int a25, int a26, int a27, int a28, int a29, int a30, int a31, int a32, int a33, int a34, int a35, int a36, int a37)<br />{<br />  int v37; // <a target="_blank">esi@1</a><br />  int v38; // <a target="_blank">eax@1</a><br />  LONG v39; // <a target="_blank">ecx@1</a><br />  BOOL result; // <a target="_blank">eax@1</a><br />  int v41; // <a target="_blank">ecx@3</a><br />  int v42; // <a target="_blank">ebp@4</a><br />  int i; // <a target="_blank">edi@4</a><br />  char v44; // <a target="_blank">dl@5</a><br />  int v45; // <a target="_blank">edi@13</a><br />  bool v46; // <a target="_blank">sf@13</a><br />  unsigned __int8 v47; // <a target="_blank">of@13</a><br />  int v48; // [sp+10h] [bp-24h]@3<br />  struct tagRECT rcDst; // [sp+14h] [bp-20h]@1<br />  RECT rcSrc2; // [sp+24h] [bp-10h]@1<br />  __int32 v51; // [sp+3Ch] [bp+8h]@3</p><p>  v37 = this;<br />  v38 = *(_DWORD *)(this + 4);<br />  v39 = a4 + *(_DWORD *)(this + 8);<br />  rcSrc2.right = a3 + v38;<br />  rcSrc2.bottom = v39;<br />  rcDst.right = a9;<br />  rcDst.bottom = a8;<br />  rcSrc2.left = a3;<br />  rcSrc2.top = a4;<br />  rcDst.left = 0;<br />  rcDst.top = 0;<br /><strong>  IntersectRect(&amp;rcDst, &amp;rcDst, &amp;rcSrc2);<br />  result = EqualRect(&amp;rcSrc2, &amp;rcDst);</strong><br />  if ( result )<br />  {<br />    result = a15;<br />    if ( a15 )<br />    {<br />      result = a4 * a10 + a15 + 2 * a3;<br />      v41 = ~a5 ^ 0xBBBB;<br />      v51 = a4 * a10 + a15 + 2 * a3;<br />      v48 = 0;<br />      if ( *(_DWORD *)(v37 + 8) &gt; 0 )<br />      {<br />        do<br />        {<br />          v42 = 0;<br />          for ( i = 0; i &lt; *(_DWORD *)(v37 + 4); result += 2 )<br />          {<br />            v44 = *(_BYTE *)a2 &amp; byte_4901B8[v42++];<br />            if ( v44 )<br />            {<br />              if ( a37 )<br />              {<br />                *(_BYTE *)result = v41;<br />                *(_BYTE *)(result + 1) = BYTE1(v41);<br />              }<br />            }<br />            else<br />            {<br />              *(_BYTE *)result = a5;<br />              *(_BYTE *)(result + 1) = BYTE1(a5);<br />            }<br />            if ( v42 == 8 || i == *(_DWORD *)(v37 + 4) - 1 )<br />            {<br />              v42 = 0;<br />              ++a2;<br />            }<br />            ++i;<br />          }<br />          v45 = *(_DWORD *)(v37 + 8);<br />          result = a10 + v51;<br />          v47 = __OFSUB__(v48 + 1, v45);<br />          v46 = v48 + 1 - v45 &lt; 0;<br />          v51 += a10;<br />          ++v48;<br />        }<br />        while ( v46 ^ v47 );<br />      }<br />    }<br />  }<br />  return result;<br />}</p><p><br /></p><p>장착시 장착중인 아이템이 빠져나갈 값 src가 장착시엔3개지만 빠져나올값은 2개여서 그랬었네요 귀여운실수인듯<br /></p>
+					
+					
+				
+			</p>
+				
+		
+		
+	</div>
+	
+	
+	
+
+
+
+
+
+
+
+	
+
+	
+	
+
+
+
+
+
+
+
+    
+
+	
+	
+
+
+
+
+aa</p>
+<p><b>댓글 11</b><hr /><p><b>아켄빛검(tequiero__)</b> 2015-05-01 11:44:00<br />
+
+                                
+                                <div class="u_cbox_text_wrap">
+                                    
+                                    
+                                    <span class="u_cbox_contents">2개낍시다 간지나게</span>
+                                    
+                                </div>
+                                
+                                
+                                
+
+                                
+                                </p><p><b>드라이아이스(ssibajle1)</b> 2015-05-01 11:47:00<br />
+
+                                
+                                <div class="u_cbox_text_wrap">
+                                    
+                                    
+                                    <span class="u_cbox_contents">ㅋㅋㅋㅋㅋㅋㅋ</span>
+                                    
+                                </div>
+                                
+                                
+                                
+
+                                
+                                </p><p><b>제국(kimcil2002)</b> 2015-05-01 12:00:00<br />
+
+                                
+                                <div class="u_cbox_text_wrap">
+                                    
+                                    
+                                </div>
+                                
+                                <div class="u_cbox_sticker_section">
+                                    <div class="u_cbox_sticker_wrap">
+                                    
+                                        
+                                        
+                                            <a href="http://m.gfmarket.naver.com/sticker/detail/code/sally_friends" target="_blank" onclick="nclk(this,'cmt.insticker','','');"><img style="height: auto; max-width: 182px; max-height: 182px;" src="./images/002164_003_original_18.png" /></a>
+                                        
+                                    
+                                    </div>
+                                </div>
+                                
+                                
+                                
+
+                                
+                                </p><p><b>상진팍(lukewin)</b> 2015-05-01 12:01:00<br />
+
+                                
+                                <div class="u_cbox_text_wrap">
+                                    
+                                    
+                                    <span class="u_cbox_contents">활은 두개껴야 됨 ㅋㅋ</span>
+                                    
+                                </div>
+                                
+                                
+                                
+
+                                
+                                </p><p><b>토깽이풀(aa1070aa)</b> 2015-05-01 12:22:00<br />
+
+                                
+                                <div class="u_cbox_text_wrap">
+                                    
+                                    
+                                    <span class="u_cbox_contents">ㅋㅋㅋ쌍활</span>
+                                    
+                                </div>
+                                
+                                
+                                
+
+                                
+                                </p><p><b>rallymonkey(sonyj1250)</b> 2015-05-01 12:37:00<br />
+
+                                
+                                <div class="u_cbox_text_wrap">
+                                    
+                                    
+                                    <span class="u_cbox_contents">킬러보우7ㅋㅋㅋㅋ</span>
+                                    
+                                </div>
+                                
+                                
+                                
+
+                                
+                                </p><p><b>버그10단(hashman)</b> 2015-05-01 12:53:00<br />
+
+                                
+                                <div class="u_cbox_text_wrap">
+                                    
+                                    
+                                    <span class="u_cbox_contents">데빌두개낍시다</span>
+                                    
+                                </div>
+                                
+                                
+                                
+
+                                
+                                </p><p><b>참이슬(gjrnrwls)</b> 2015-05-01 12:54:00<br />
+
+                                
+                                <div class="u_cbox_text_wrap">
+                                    
+                                    
+                                    <span class="u_cbox_contents">두개죠 당연히 ㅋㅋㅋㅋㅋㅋ</span>
+                                    
+                                </div>
+                                
+                                
+                                
+
+                                
+                                </p><p><b>디제이고수(net2145)</b> 2015-05-01 14:02:00<br />
+
+                                
+                                <div class="u_cbox_text_wrap">
+                                    
+                                    
+                                    <span class="u_cbox_contents">ㅋㅋㅋㅋㅋㅋㅋ</span>
+                                    
+                                </div>
+                                
+                                
+                                
+
+                                
+                                </p><p><b>그린(solrari)</b> 2015-05-01 14:35:00<br />
+
+                                
+                                <div class="u_cbox_text_wrap">
+                                    
+                                    
+                                    <span class="u_cbox_contents">활에다가 검도낄수있었던거같은데 지검이랑 활이랑ㅋㅋ</span>
+                                    
+                                </div>
+                                
+                                
+                                
+
+                                
+                                </p><p><b>히이이이익(dsjka101)</b> 2015-05-02 22:53:00<br />
+
+                                
+                                <div class="u_cbox_text_wrap">
+                                    
+                                    
+                                    <span class="u_cbox_contents">ㅋㅋㅋㅋ</span>
+                                    
+                                </div>
+                                
+                                
+                                
+
+                                
+                                </p></p>
+</body>
+</html>
